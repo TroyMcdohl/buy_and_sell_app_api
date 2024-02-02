@@ -58,11 +58,7 @@ exports.login = catchAsync(async (req, res, next) => {
   const token = jwt.sign({ id: user._id }, process.env.JWT_SECRECT);
 
   res.cookie("jwt", token, {
-    httpOnly: true,
     expires: new Date(Date.now() + 24 * 3600 * 1000),
-    partitioned: true,
-    sameSite: "none",
-    secure: true,
   });
 
   res.status(200).json({
@@ -169,8 +165,6 @@ exports.protect = async (req, res, next) => {
 exports.logout = (req, res) => {
   res.cookie("jwt", "logout", {
     expires: new Date(Date.now() + 5 * 1000),
-
-    secure: true,
   });
 
   res.status(200).json({ status: "success" });
