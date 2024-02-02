@@ -60,6 +60,8 @@ exports.login = catchAsync(async (req, res, next) => {
   res.cookie("jwt", token, {
     httpOnly: true,
     expires: new Date(Date.now() + 24 * 3600 * 1000),
+    partitioned: true,
+    sameSite: "none",
     secure: true,
   });
 
