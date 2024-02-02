@@ -22,7 +22,7 @@ mongoose
 
 app.use(
   cors({
-    origin: "https://buy-and-sell-app.vercel.app/",
+    origin: "https://buy-and-sell-app.vercel.app",
     credentials: true,
   })
 );
