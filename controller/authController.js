@@ -61,7 +61,7 @@ exports.login = catchAsync(async (req, res, next) => {
     expires: new Date(Date.now() + 24 * 3600 * 1000),
     httpOnly: true,
     sameSite: "none",
-    domain: ".vercel.app",
+    domain: ".vercel.app.com",
   });
 
   res.status(200).json({
