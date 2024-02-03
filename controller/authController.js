@@ -62,7 +62,6 @@ exports.login = catchAsync(async (req, res, next) => {
     httpOnly: true,
     secure: true,
     sameSite: "none",
-    domain: ".vercel.app",
   });
 
   res.status(200).json({
