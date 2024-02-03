@@ -59,7 +59,7 @@ exports.login = catchAsync(async (req, res, next) => {
 
   res.cookie("jwt", token, {
     expires: new Date(Date.now() + 24 * 3600 * 1000),
-    httpOnly: false,
+    httpOnly: true,
     secure: true,
     sameSite: "none",
   });
@@ -169,7 +169,7 @@ exports.protect = async (req, res, next) => {
 exports.logout = (req, res) => {
   res.cookie("jwt", "logout", {
     expires: new Date(Date.now() + 5 * 1000),
-    httpOnly: false,
+    httpOnly: true,
     sameSite: "none",
     secure: true,
   });
