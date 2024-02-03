@@ -63,7 +63,6 @@ exports.login = catchAsync(async (req, res, next) => {
     secure: true,
     sameSite: "none",
     domain: ".buy-and-sell-app.vercel.app",
-    path: "/",
   });
 
   res.status(200).json({
