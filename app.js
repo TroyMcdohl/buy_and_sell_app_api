@@ -20,11 +20,9 @@ mongoose
   })
   .catch((err) => console.log(err));
 
-app.set("trust proxy", 1);
-
 app.use(
   cors({
-    origin: "https://buy-and-sell-app.vercel.app",
+    origin: "http://localhost:3001",
     credentials: true,
   })
 );
