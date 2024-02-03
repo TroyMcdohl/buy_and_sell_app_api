@@ -22,7 +22,7 @@ mongoose
 
 app.use(
   cors({
-    origin: "https://main--teal-starburst-6b70b4.netlify.app",
+    origin: "https://buy-and-sell-app.vercel.app",
     credentials: true,
   })
 );
